@@ -1,38 +1,12 @@
 <html>
   <head>
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        body {
-            font-size: 53px;
-            font-family: 'Bebas Neue', cursive;
-            color: #FFFFFF;
-            text-shadow:
-            -2px -2px 0 #000,  
-            2px -2px 0 #000,
-            -2px 2px 0 #000,
-            2px 2px 0 #000;
-        }
-    </style>
-    <script lang="javascript">
-        const namespace = 'varyunyatv';
-        const key = '30a9a3ba-c29e-480e-b22f-5067139e921e';
-        const url = `https://api.countapi.xyz/get/${namespace}/${key}`;
-        function poll() {
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', url);
-            xhr.responseType = 'json';
-            xhr.onload = () => {
-                let el = document.getElementById('count');
-                el.textContent = xhr.response.value;
-                poll();
-            };
-            xhr.send();
-        }
-        poll();
-    </script>
-    <meta http-equiv="refresh" content="1800">
   </head>
   <body>
-    Death Counter: <span id="count"></span>
+    <h1>Varyunya OBS overlays</h1>
+    <ul>
+      <li><a href="varyunya/varyunya_clock_12h.html">12hr Clock</a></li>
+      <li><a href="varyunya/varyunya_clock_24h.html">24hr Clock</a></li>
+      <li><a href="varyunya/varyunya_death_counter.html">Death Counter</a></li>
+    </ul>
   </body>
 </html>
