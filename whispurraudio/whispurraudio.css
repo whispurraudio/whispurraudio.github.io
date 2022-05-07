@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=W95FA&display=swap');
+
+body {
+    height: 100%;
+    font-size: 28px;
+    font-family: "W95FA", sans-serif;
+    color: #7048d3;
+}
+
+p {
+    margin: 0;
+    padding:0;
+}
