@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Bits Incentives",
+        "items": [
+            {
+                "icon": "bits",
+                "amount": "100",
+                "description": "i'll do a thing"
+            },
+            {
+                "icon": "bits",
+                "amount": "200",
+                "description": "i'll do another thing"
+            }
+        ]
+    },
+    {
+        "title": "Sub Milestones",
+        "items": [
+            {
+                "icon": "subs",
+                "amount": "5 subs",
+                "description": "i'll do a third thing"
+            },
+            {
+                "icon": "subs",
+                "amount": "10 subs",
+                "description": "i'll do a fourth thing"
+            }
+        ]
+    }
+]
