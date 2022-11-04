@@ -38,17 +38,17 @@
                 {
                     "icon": "bits",
                     "amount": "750",
-                    "description": "Ban a weapon for one hour"
+                    "description": "Ban a weapon for 1hr"
                 },
                 {
                     "icon": "bits",
                     "amount": "1000",
-                    "description": "Pick an impression for me to do for 30m"
+                    "description": "Pick an impression for me to do for 30min"
                 },
                 {
                     "icon": "bits",
                     "amount": "1500",
-                    "description": "I chug a tiny margarita (max 1 per hr, 12 max)"
+                    "description": "I chug a tiny margarita (1/hr, 12 max)"
                 }
                 
             ]
@@ -69,7 +69,7 @@
                 {
                     "icon": "subs",
                     "amount": "20",
-                    "description": "ASMR voice while I play for 30 minutes"
+                    "description": "ASMR voice while I play for 30min"
                 },
                 {
                     "icon": "subs",
@@ -84,7 +84,7 @@
                 {
                     "icon": "subs",
                     "amount": "100",
-                    "description": "I have to play Fortnite for 1 hour"
+                    "description": "I have to play Fortnite for 1hr"
                 }
             ]
         },
