@@ -1,37 +1,7 @@
 {
     "windowIcon": "twitch",
-    "windowTitle": "SubathonInfo.txt",
+    "windowTitle": "Stream_Info.txt",
     "pages": [
-        {
-            "title": "Bits Incentives",
-            "items": [
-                {
-                    "icon": "bits",
-                    "amount": "100",
-                    "description": "i'll do a thing"
-                },
-                {
-                    "icon": "bits",
-                    "amount": "200",
-                    "description": "i'll do another thing"
-                }
-            ]
-        },
-        {
-            "title": "Sub Milestones",
-            "items": [
-                {
-                    "icon": "subs",
-                    "amount": "5 subs",
-                    "description": "i'll do a third thing"
-                },
-                {
-                    "icon": "subs",
-                    "amount": "10 subs",
-                    "description": "i'll do a fourth thing"
-                }
-            ]
-        },
         {
             "title": "Subathon Rules",
             "items": [
@@ -49,6 +19,52 @@
                     "icon": "tier3",
                     "amount": "Tier 3",
                     "description": "+1 Hour"
+                }
+            ]
+        },
+        {
+            "title": "Bits Redeems",
+            "items": [
+                {
+                    "icon": "bits",
+                    "amount": "100",
+                    "description": "<b>Kitty Kith:</b> Virtually kiss Lenny's or Fanta's head"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "300",
+                    "description": "<b>Hydrate: </b> Make me take a drink of water"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "750",
+                    "description": "<b>Gun Ban:</b> Pick a gun that I can't use for the next hour"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "750",
+                    "description": "<b>Pick My Voice:</b> Pick an impression for me to do for 30m"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "1000",
+                    "description": "<b>Chug-A-Rita:</b> I chug a tiny margarita (max 1 per hr, 12 max)"
+                }
+                
+            ]
+        },
+        {
+            "title": "Subathon Goals",
+            "items": [
+                {
+                    "icon": "subs",
+                    "amount": "5 subs",
+                    "description": "i'll do a third thing"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "10 subs",
+                    "description": "ASMR while I play for 1 hour"
                 }
             ]
         }
