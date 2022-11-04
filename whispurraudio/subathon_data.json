@@ -7,18 +7,18 @@
             "items": [
                 {
                     "icon": "tier1",
-                    "amount": "Tier 1",
-                    "description": "+10 Minutes"
+                    "amount": "Tier 1 Sub",
+                    "description": "+7 Minutes"
                 },
                 {
-                    "icon": "tier2",
+                    "icon": "tier2 Sub",
                     "amount": "Tier 2",
-                    "description": "+30 Minutes"
+                    "description": "+20 Minutes"
                 },
                 {
-                    "icon": "tier3",
+                    "icon": "tier3 Sub",
                     "amount": "Tier 3",
-                    "description": "+1 Hour"
+                    "description": "+45 Minutes"
                 }
             ]
         },
@@ -28,43 +28,83 @@
                 {
                     "icon": "bits",
                     "amount": "100",
-                    "description": "<b>Kitty Kith:</b> Virtually kiss Lenny's or Fanta's head"
+                    "description": "Virtually kiss Lenny's or Fanta's head"
                 },
                 {
                     "icon": "bits",
                     "amount": "300",
-                    "description": "<b>Hydrate: </b> Make me take a drink of water"
+                    "description": "Hydrate"
                 },
                 {
                     "icon": "bits",
                     "amount": "750",
-                    "description": "<b>Gun Ban:</b> Pick a gun that I can't use for the next hour"
-                },
-                {
-                    "icon": "bits",
-                    "amount": "750",
-                    "description": "<b>Pick My Voice:</b> Pick an impression for me to do for 30m"
+                    "description": "Ban a weapon for one hour"
                 },
                 {
                     "icon": "bits",
                     "amount": "1000",
-                    "description": "<b>Chug-A-Rita:</b> I chug a tiny margarita (max 1 per hr, 12 max)"
+                    "description": "Pick an impression for me to do for 30m"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "1500",
+                    "description": "I chug a tiny margarita (max 1 per hr, 12 max)"
                 }
                 
             ]
         },
         {
-            "title": "Subathon Goals",
+            "title": "Community Sub Goals",
             "items": [
                 {
                     "icon": "subs",
-                    "amount": "5 subs",
-                    "description": "i'll do a third thing"
+                    "amount": "5",
+                    "description": "Custom Tweet by Chat"
                 },
                 {
                     "icon": "subs",
-                    "amount": "10 subs",
-                    "description": "ASMR while I play for 1 hour"
+                    "amount": "10",
+                    "description": "I trim Lenny's claws on stream (audio only)"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "20",
+                    "description": "ASMR voice while I play for 30 minutes"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "30",
+                    "description": "Chat picks a SFW script plot"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "50",
+                    "description": "Chat picks a game for the next subathon"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "100",
+                    "description": "I have to play Fortnite for 1 hour"
+                }
+            ]
+        },
+        {
+            "title": "Individual Sub Rewards",
+            "items": [
+                {
+                    "icon": "subs",
+                    "amount": "5",
+                    "description": "Twitter shoutout"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "10",
+                    "description": "Virtual kitty 'postcard' with your username"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "25",
+                    "description": "5min SFW ASMR audio w/ your name"
                 }
             ]
         }
