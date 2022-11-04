@@ -1,32 +1,56 @@
-[
-    {
-        "title": "Bits Incentives",
-        "items": [
-            {
-                "icon": "bits",
-                "amount": "100",
-                "description": "i'll do a thing"
-            },
-            {
-                "icon": "bits",
-                "amount": "200",
-                "description": "i'll do another thing"
-            }
-        ]
-    },
-    {
-        "title": "Sub Milestones",
-        "items": [
-            {
-                "icon": "subs",
-                "amount": "5 subs",
-                "description": "i'll do a third thing"
-            },
-            {
-                "icon": "subs",
-                "amount": "10 subs",
-                "description": "i'll do a fourth thing"
-            }
-        ]
-    }
-]
+{
+    "windowIcon": "twitch",
+    "windowTitle": "SubathonInfo.txt",
+    "pages": [
+        {
+            "title": "Bits Incentives",
+            "items": [
+                {
+                    "icon": "bits",
+                    "amount": "100",
+                    "description": "i'll do a thing"
+                },
+                {
+                    "icon": "bits",
+                    "amount": "200",
+                    "description": "i'll do another thing"
+                }
+            ]
+        },
+        {
+            "title": "Sub Milestones",
+            "items": [
+                {
+                    "icon": "subs",
+                    "amount": "5 subs",
+                    "description": "i'll do a third thing"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "10 subs",
+                    "description": "i'll do a fourth thing"
+                }
+            ]
+        },
+        {
+            "title": "Subathon Rules",
+            "items": [
+                {
+                    "icon": "subs",
+                    "amount": "Tier 1",
+                    "description": "+10 Minutes"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "Tier 2",
+                    "description": "+30 Minutes"
+                },
+                {
+                    "icon": "subs",
+                    "amount": "Tier 3",
+                    "description": "+1 Hour"
+                }
+            ]
+        }
+    ]
+}
