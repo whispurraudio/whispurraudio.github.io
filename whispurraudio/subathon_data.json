@@ -7,16 +7,16 @@
             "items": [
                 {
                     "icon": "tier1",
-                    "amount": "Tier 1 Sub",
+                    "amount": "Tier 1",
                     "description": "+7 Minutes"
                 },
                 {
-                    "icon": "tier2 Sub",
+                    "icon": "tier2",
                     "amount": "Tier 2",
                     "description": "+20 Minutes"
                 },
                 {
-                    "icon": "tier3 Sub",
+                    "icon": "tier3",
                     "amount": "Tier 3",
                     "description": "+45 Minutes"
                 }
