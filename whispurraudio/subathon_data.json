@@ -36,17 +36,17 @@
             "title": "Subathon Rules",
             "items": [
                 {
-                    "icon": "subs",
+                    "icon": "tier1",
                     "amount": "Tier 1",
                     "description": "+10 Minutes"
                 },
                 {
-                    "icon": "subs",
+                    "icon": "tier2",
                     "amount": "Tier 2",
                     "description": "+30 Minutes"
                 },
                 {
-                    "icon": "subs",
+                    "icon": "tier3",
                     "amount": "Tier 3",
                     "description": "+1 Hour"
                 }
