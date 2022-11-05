@@ -23,30 +23,30 @@
             ]
         },
         {
-            "title": "Bits Redeems",
+            "title": "Point Redeems",
             "items": [
                 {
-                    "icon": "bits",
+                    "icon": "points",
                     "amount": "100",
                     "description": "Virtually kiss Lenny's or Fanta's head"
                 },
                 {
-                    "icon": "bits",
+                    "icon": "points",
                     "amount": "300",
                     "description": "Hydrate"
                 },
                 {
-                    "icon": "bits",
+                    "icon": "points",
                     "amount": "750",
                     "description": "Ban a weapon for 1hr"
                 },
                 {
-                    "icon": "bits",
+                    "icon": "points",
                     "amount": "1000",
                     "description": "Pick an impression for me to do for 30min"
                 },
                 {
-                    "icon": "bits",
+                    "icon": "points",
                     "amount": "1500",
                     "description": "I chug a tiny margarita (1/hr, 12 max)"
                 }
