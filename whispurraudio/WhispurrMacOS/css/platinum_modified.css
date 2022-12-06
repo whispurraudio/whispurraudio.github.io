@@ -254,8 +254,8 @@ body {
 .window .inner,
 .window .inner-gameWindow {
     border: 2px solid #111;
-    box-shadow: -2px -2px 0 0 #999, 2px 2px 0 0 #fff, inset 2px 2px 0 0 #fff,
-        inset -2px -2px 0 0 #999;
+    box-shadow: -2px -2px 0 0 rgb(153,153,153,.5), 2px 2px 0 0 rgb(256,256,256,.5), inset 2px 2px 0 0 rgb(256,256,256,.5),
+        inset -2px -2px 0 0 rgb(153,153,153,.5);
 }
 
 .window .inner {
