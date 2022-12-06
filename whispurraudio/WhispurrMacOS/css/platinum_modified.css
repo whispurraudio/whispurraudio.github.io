@@ -215,7 +215,7 @@ body {
     margin: 0;
     overflow: hidden;
     font-family: "Chicago", "Charcoal", "Times New Roman", "Georgia", serif;
-    font-size: 0.75em;
+    font-size: 1.5em;
     font-weight: 100 !important;
 }
 
@@ -332,12 +332,13 @@ div.window.noscroll .inner {
 .titlebar-header span {
     background-color: #ccc;
     background-image: none;
+    white-space: nowrap;
     /* padding: 0 1rem; */
     /* margin-left: -2rem; */
 }
 
 .titlebar-header {
-    font-size: 2.2rem;
+    font-size: 1.1rem;
     text-align: center;
     margin: 0 1rem;
     grid-area: header;
