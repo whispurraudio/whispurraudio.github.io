@@ -14,23 +14,7 @@
     --color2-gradient-5: #555;
     --color2-gradient-6: #666;
     --color2-gradient-7: #777;
-    --color2-gradient-8: #888;
-    --color2-gradient-9: #999;
-    --color2-gradient-10: #aaa;
-    --color2-gradient-11: #bbb;
-    --color2-gradient-12: #ccc;
-    --color2-gradient-13: #ddd;
-    --color2-gradient-14: #eee;
-    --color2-gradient-15: #fff;
 
-    --color1-gradient-0: #000;
-    --color1-gradient-1: #111;
-    --color1-gradient-2: #222;
-    --color1-gradient-3: #333;
-    --color1-gradient-4: #444;
-    --color1-gradient-5: #555;
-    --color1-gradient-6: #666;
-    --color1-gradient-7: #777;
     --color1-gradient-8: #888;
     --color1-gradient-9: #999;
     --color1-gradient-10: #aaa;
@@ -57,8 +41,6 @@
     --scrollbar-thumb-gradient2: #9b9bf9;
     --scrollbar-thumb-gradient3: #cdcdfc;
 
-    --text-color: var(--color2-gradient-0);
-
     --button-background: var(--color1-gradient-13);
     --button-box-shadow: inset -1px -1px 0 0 var(--color2-gradient-7), inset -2px -2px 0 0 var(--color1-gradient-10),
         inset 1px 1px 0 0 var(--color1-gradient-13), inset 2px 2px 0 0 var(--color1-gradient-15);
@@ -66,13 +48,13 @@
 }
 
 :root.whispurrTheme {
-    --color2-gradient-0: #240F2F;
-    --color2-gradient-1: #311440;
-    --color2-gradient-2: #3D1A51;
-    --color2-gradient-3: #4A1F62;
-    --color2-gradient-4: #572572;
-    --color2-gradient-5: #642A83;
-    --color2-gradient-6: #703094;
+    --color2-gradient-0: #000;
+    --color2-gradient-1: #120818;
+    --color2-gradient-2: #240F2F;
+    --color2-gradient-3: #361747;
+    --color2-gradient-4: #471E5E;
+    --color2-gradient-5: #592676;
+    --color2-gradient-6: #6B2D8D;
     --color2-gradient-7: #7D35A5;
     --color2-gradient-8: #7D35A5;
     --color2-gradient-9: #9052B2;
@@ -99,10 +81,6 @@
     --color1-gradient-13: #F8CCE3;
     --color1-gradient-14: #FBE5F1;
     --color1-gradient-15: #fff;
-
-    --window-inner-background: var(--color1-gradient-14);
-
-    --text-color: var(--color2-gradient-1);
     
     --scrollbar-thumb-highlight: #DAC5E5;
     --scrollbar-thumb-shadow: #A26FBF;
@@ -133,7 +111,6 @@ html {
     font-family: Chicago, Charcoal, "Times New Roman", Georgia, serif;
     font-size: .75em;
     font-weight: 100 !important;
-    color: var(--text-color);
 }
 .window ul {
     margin: 4px 0 1.5rem;
@@ -222,7 +199,7 @@ div.window .inner {
     grid-area: header;
 }
 .titlebar-header-lines {
-    background-image: url("../img/title-stripe-center.png");
+    background-image: url("../img/title-stripe-center-large.jpg");
     background-position: 10% 60%;
     background-repeat: repeat-x;
     font-size: 2.2rem;

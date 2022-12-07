@@ -1,6 +1,6 @@
 nav {
-    background-color: #000;
-    margin: 0 0 1em;
+    background-color: var(--color2-gradient-0);
+    /* margin: 0 0 1em; */
     padding: 0;
     position: relative;
     width: 100%;
@@ -13,20 +13,20 @@ ul.menu {
     margin-left: -0.5rem;
     padding: 0;
     position: absolute;
-    background-color: #ddd;
-    color: #000;
+    background-color: var(--window-inner-background);
+    color: var(--color2-gradient-0);
     font-size: 1.25rem;
     list-style-type: none;
 }
 
 #macoslogo img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 #apple-logo img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .nav-list #time,
@@ -36,9 +36,9 @@ ul.menu {
 
 .nav-list li {
     float: left;
-    height: 1.75rem;
-    line-height: 1.5rem;
-    padding: 0.125rem 0.25rem 0;
+    height: 3.5rem;
+    line-height: 3rem;
+    padding: 0.25rem 0.5rem 0;
 }
 
 .nav-list li:hover ul.menu li img {
@@ -60,9 +60,9 @@ ul.menu {
 }
 
 .nav-wrapper {
-    background-color: #ddd;
-    border-radius: .5em .5em 0 0;
-    box-shadow: inset 1px 1px 0 0 #888, inset -1px -1px 0 0 #fff;
+    background-color: var(--window-inner-background);
+    border-radius: 1em 1em 0 0;
+    box-shadow: inset -2px -2px 0 0 var(--window-shadow), inset 2px 2px 0 0 var(--window-highlight);
     display: inline-block;
     height: 100%;
     padding: 0 1rem;
@@ -93,7 +93,7 @@ ul.menu {
 }
 
 .nav-wrapper ul {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
 }
 
 #app-menu {
