@@ -100,8 +100,6 @@
     --color1-gradient-14: #FBE5F1;
     --color1-gradient-15: #fff;
 
-    --window-inner-background: var(--color1-gradient-14);
-
     --text-color: var(--color2-gradient-1);
     
     --scrollbar-thumb-highlight: #DAC5E5;
