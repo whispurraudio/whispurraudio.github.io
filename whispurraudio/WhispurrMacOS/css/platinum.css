@@ -60,9 +60,9 @@
     --text-color: var(--color2-gradient-0);
 
     --button-background: var(--color1-gradient-13);
-    --button-box-shadow: inset -1px -1px 0 0 var(--color2-gradient-7), inset -2px -2px 0 0 var(--color1-gradient-10),
+    --button-box-shadow: inset -1px -1px 0 0 var(--color1-gradient-7), inset -2px -2px 0 0 var(--color1-gradient-10),
         inset 1px 1px 0 0 var(--color1-gradient-13), inset 2px 2px 0 0 var(--color1-gradient-15);
-    --button-hover-bezel: 0 0 0 1px var(--color1-gradient-10), 0 0 0 2px var(--color1-gradient-13), 0 0 0 3px var(--color2-gradient-0);
+    --button-hover-bezel: 0 0 0 1px var(--color1-gradient-10), 0 0 0 2px var(--color1-gradient-13), 0 0 0 3px var(--color1-gradient-0);
 }
 
 :root.whispurrTheme {
@@ -83,13 +83,13 @@
     --color2-gradient-14: #ECE2F2;
     --color2-gradient-15: #fff;
 
-    --color1-gradient-0: #000;
-    --color1-gradient-1: #210B16;
-    --color1-gradient-2: #41162D;
-    --color1-gradient-3: #622143;
-    --color1-gradient-4: #832B59;
-    --color1-gradient-5: #A4366F;
-    --color1-gradient-6: #C44186;
+    --color1-gradient-0: #210B16;
+    --color1-gradient-1: #3D1429;
+    --color1-gradient-2: #591E3C;
+    --color1-gradient-3: #75274F;
+    --color1-gradient-4: #913063;
+    --color1-gradient-5: #AD3976;
+    --color1-gradient-6: #C94389;
     --color1-gradient-7: #E54C9C;
     --color1-gradient-8: #E54C9C;
     --color1-gradient-9: #E966AA;
@@ -102,11 +102,55 @@
 
     --text-color: var(--color2-gradient-1);
     
-    --scrollbar-thumb-highlight: #DAC5E5;
-    --scrollbar-thumb-shadow: #A26FBF;
-    --scrollbar-thumb-gradient1: #7D35A5;
-    --scrollbar-thumb-gradient2: #B58CCC;
-    --scrollbar-thumb-gradient3: #DAC5E5;
+    --scrollbar-thumb-highlight: var(--color2-gradient-13);
+    --scrollbar-thumb-shadow: var(--color2-gradient-10);
+    --scrollbar-thumb-gradient1: var(--color2-gradient-7);
+    --scrollbar-thumb-gradient2: var(--color2-gradient-11);
+    --scrollbar-thumb-gradient3: var(--color2-gradient-13);
+}
+
+:root.whispurrThemeInverted {
+    --color1-gradient-0: #240F2F;
+    --color1-gradient-1: #311440;
+    --color1-gradient-2: #3D1A51;
+    --color1-gradient-3: #4A1F62;
+    --color1-gradient-4: #572572;
+    --color1-gradient-5: #642A83;
+    --color1-gradient-6: #703094;
+    --color1-gradient-7: #7D35A5;
+    --color1-gradient-8: #7D35A5;
+    --color1-gradient-9: #9052B2;
+    --color1-gradient-10: #A26FBF;
+    --color1-gradient-11: #B58CCC;
+    --color1-gradient-12: #C7A8D8;
+    --color1-gradient-13: #DAC5E5;
+    --color1-gradient-14: #ECE2F2;
+    --color1-gradient-15: #fff;
+
+    --color2-gradient-0: #210B16;
+    --color2-gradient-1: #3D1429;
+    --color2-gradient-2: #591E3C;
+    --color2-gradient-3: #75274F;
+    --color2-gradient-4: #913063;
+    --color2-gradient-5: #AD3976;
+    --color2-gradient-6: #C94389;
+    --color2-gradient-7: #E54C9C;
+    --color2-gradient-8: #E54C9C;
+    --color2-gradient-9: #E966AA;
+    --color2-gradient-10: #EC7FB8;
+    --color2-gradient-11: #F099C6;
+    --color2-gradient-12: #F4B2D5;
+    --color2-gradient-13: #F8CCE3;
+    --color2-gradient-14: #FBE5F1;
+    --color2-gradient-15: #fff;
+
+    --text-color: var(--color2-gradient-1);
+    
+    --scrollbar-thumb-highlight: var(--color2-gradient-13);
+    --scrollbar-thumb-shadow: var(--color2-gradient-10);
+    --scrollbar-thumb-gradient1: var(--color2-gradient-7);
+    --scrollbar-thumb-gradient2: var(--color2-gradient-11);
+    --scrollbar-thumb-gradient3: var(--color2-gradient-13);
 }
 
 body,
@@ -188,7 +232,7 @@ div.window .inner {
     overflow-y: scroll;
 }
 .control-box {
-    box-shadow: inset -2px -2px 0 0 var(--button-highlight), inset 2px 2px 0 0 var(--button-shadow);
+    box-shadow: inset -2px -2px 0 0 var(--window-highlight), inset 2px 2px 0 0 var(--window-shadow);
     padding: 2px;
     top: 6px;
     z-index: 100;
@@ -200,7 +244,7 @@ div.window .inner {
         var(--button-gradient-highlight)
     );
     border: 2px solid var(--color2-gradient-2);
-    box-shadow: inset 2px 2px 0 0 var(--window-color), inset -2px -2px 0 0 var(--button-shadow);
+    box-shadow: inset 2px 2px 0 0 var(--button-background), inset -2px -2px 0 0 var(--button-shadow);
     text-indent: -99999rem;
     display: block;
     height: 2rem;
