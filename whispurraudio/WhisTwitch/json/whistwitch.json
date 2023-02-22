@@ -1,0 +1,456 @@
+{
+    "twitchChannelName": {
+        "label": "Twitch Channel Name",
+        "type": "text",
+        "value": "whispurraudio",
+        "group": "Twitch - Settings"
+    },
+    "twitchPosterSize": {
+        "type": "dropdown",
+        "label": "Image Size:",
+        "value": "Medium",
+        "options": {
+            "-52x72.jpg": "Small",
+            "-136x190.jpg": "Medium",
+            "-272x380.jpg": "Large"
+        },
+        "group": "Twitch - Settings"
+    },
+    "label1Text": {
+        "label": "Label 1 Text",
+        "type": "text",
+        "value": "Latest Subscriber",
+        "group": "Custom Labels"
+    },
+    "label1Type": {
+        "type": "dropdown",
+        "label": "Label 1 Event type:",
+        "value": "subscriber-resub-latest",
+        "options": {
+            "follower-latest": "Latest follower",
+            "subscriber-latest": "Latest subscriber",
+            "tip-latest": "Latest tip",
+            "cheer-latest": "Latest cheer",
+            "host-latest": "Latest host",
+            "raid-latest": "Latest raid",
+            "subscriber-new-latest": "(new)Subscriber latest",
+            "subscriber-resub-latest": "(resub)Subscriber latest",
+            "subscriber-gifted-latest": "(gifted)Subscriber latest",
+            "subscriber-alltime-gifter": "Subscriber Alltime gifter",
+            "tip-alltime-top-donation": "Tip alltime top donation",
+            "tip-alltime-top-donator": "Tip alltime top donator",
+            "tip-monthly-top-donation": "Tip monthly top donation",
+            "tip-monthly-top-donator": "Tip monthly top donator",
+            "tip-weekly-top-donation": "Tip weekly top donation",
+            "tip-weekly-top-donator": "Tip weekly top donator",
+            "tip-session-top-donation": "Tip session top donation",
+            "tip-session-top-donator": "Tip session top donator",
+            "cheer-alltime-top-donation": "Cheer alltime top donation",
+            "cheer-alltime-top-donator": "Cheer alltime top donator",
+            "cheer-monthly-top-donation": "Cheer monthly top donation",
+            "cheer-monthly-top-donator": "Cheer monthly top donator",
+            "cheer-weekly-top-donation": "Cheer weekly top donation",
+            "cheer-weekly-top-donator": "Cheer weekly top donator",
+            "cheer-session-top-donation": "Cheer session top donation",
+            "cheer-session-top-donator": "Cheer session top donator",
+            "follower": "Follower count",
+            "subscriber": "Subscriber  count",
+            "subscriber-new": "Subscriber new  count(session only)",
+            "subscriber-resub": "Subscriber resub  count(session only)",
+            "subscriber-gifted": "Subscriber gifted  count(session only)",
+            "tip": "Tip amount",
+            "cheer": "Bits amount",
+            "subscriber-points": "Subscriber points"
+        },
+        "group": "Custom Labels"
+    },
+    "label1Period": {
+        "type": "dropdown",
+        "label": "Label 1 Pick period: (if count/amount is selected)",
+        "value": "total",
+        "options": {
+            "session": "Session",
+            "week": "Week",
+            "month": "Month",
+            "total": "Total",
+            "goal": "Amount from goal data"
+        },
+        "group": "Custom Labels"
+    },
+    "label2Text": {
+        "label": "Label 2 Text",
+        "type": "text",
+        "value": "Latest Follower",
+        "group": "Custom Labels"
+    },
+    "label2Type": {
+        "type": "dropdown",
+        "label": "Label 1 Event type:",
+        "value": "follower-latest",
+        "options": {
+            "follower-latest": "Latest follower",
+            "subscriber-latest": "Latest subscriber",
+            "tip-latest": "Latest tip",
+            "cheer-latest": "Latest cheer",
+            "host-latest": "Latest host",
+            "raid-latest": "Latest raid",
+            "subscriber-new-latest": "(new)Subscriber latest",
+            "subscriber-resub-latest": "(resub)Subscriber latest",
+            "subscriber-gifted-latest": "(gifted)Subscriber latest",
+            "subscriber-alltime-gifter": "Subscriber Alltime gifter",
+            "tip-alltime-top-donation": "Tip alltime top donation",
+            "tip-alltime-top-donator": "Tip alltime top donator",
+            "tip-monthly-top-donation": "Tip monthly top donation",
+            "tip-monthly-top-donator": "Tip monthly top donator",
+            "tip-weekly-top-donation": "Tip weekly top donation",
+            "tip-weekly-top-donator": "Tip weekly top donator",
+            "tip-session-top-donation": "Tip session top donation",
+            "tip-session-top-donator": "Tip session top donator",
+            "cheer-alltime-top-donation": "Cheer alltime top donation",
+            "cheer-alltime-top-donator": "Cheer alltime top donator",
+            "cheer-monthly-top-donation": "Cheer monthly top donation",
+            "cheer-monthly-top-donator": "Cheer monthly top donator",
+            "cheer-weekly-top-donation": "Cheer weekly top donation",
+            "cheer-weekly-top-donator": "Cheer weekly top donator",
+            "cheer-session-top-donation": "Cheer session top donation",
+            "cheer-session-top-donator": "Cheer session top donator",
+            "follower": "Follower count",
+            "subscriber": "Subscriber  count",
+            "subscriber-new": "Subscriber new  count(session only)",
+            "subscriber-resub": "Subscriber resub  count(session only)",
+            "subscriber-gifted": "Subscriber gifted  count(session only)",
+            "tip": "Tip amount",
+            "cheer": "Bits amount",
+            "subscriber-points": "Subscriber points"
+        },
+        "group": "Custom Labels"
+    },
+    "label2Period": {
+        "type": "dropdown",
+        "label": "Label 2 Pick period: (if count/amount is selected)",
+        "value": "total",
+        "options": {
+            "session": "Session",
+            "week": "Week",
+            "month": "Month",
+            "total": "Total",
+            "goal": "Amount from goal data"
+        },
+        "group": "Custom Labels"
+    },
+    "label3Text": {
+        "label": "Label 3 Text",
+        "type": "text",
+        "value": "Top Sub Gifter",
+        "group": "Custom Labels"
+    },
+    "label3Type": {
+        "type": "dropdown",
+        "label": "Label 3 Event type:",
+        "value": "subscriber-alltime-gifter",
+        "options": {
+            "follower-latest": "Latest follower",
+            "subscriber-latest": "Latest subscriber",
+            "tip-latest": "Latest tip",
+            "cheer-latest": "Latest cheer",
+            "host-latest": "Latest host",
+            "raid-latest": "Latest raid",
+            "subscriber-new-latest": "(new)Subscriber latest",
+            "subscriber-resub-latest": "(resub)Subscriber latest",
+            "subscriber-gifted-latest": "(gifted)Subscriber latest",
+            "subscriber-alltime-gifter": "Subscriber Alltime gifter",
+            "tip-alltime-top-donation": "Tip alltime top donation",
+            "tip-alltime-top-donator": "Tip alltime top donator",
+            "tip-monthly-top-donation": "Tip monthly top donation",
+            "tip-monthly-top-donator": "Tip monthly top donator",
+            "tip-weekly-top-donation": "Tip weekly top donation",
+            "tip-weekly-top-donator": "Tip weekly top donator",
+            "tip-session-top-donation": "Tip session top donation",
+            "tip-session-top-donator": "Tip session top donator",
+            "cheer-alltime-top-donation": "Cheer alltime top donation",
+            "cheer-alltime-top-donator": "Cheer alltime top donator",
+            "cheer-monthly-top-donation": "Cheer monthly top donation",
+            "cheer-monthly-top-donator": "Cheer monthly top donator",
+            "cheer-weekly-top-donation": "Cheer weekly top donation",
+            "cheer-weekly-top-donator": "Cheer weekly top donator",
+            "cheer-session-top-donation": "Cheer session top donation",
+            "cheer-session-top-donator": "Cheer session top donator",
+            "follower": "Follower count",
+            "subscriber": "Subscriber  count",
+            "subscriber-new": "Subscriber new  count(session only)",
+            "subscriber-resub": "Subscriber resub  count(session only)",
+            "subscriber-gifted": "Subscriber gifted  count(session only)",
+            "tip": "Tip amount",
+            "cheer": "Bits amount",
+            "subscriber-points": "Subscriber points"
+        },
+        "group": "Custom Labels"
+    },
+    "label3Period": {
+        "type": "dropdown",
+        "label": "Label 3 Pick period: (if count/amount is selected)",
+        "value": "total",
+        "options": {
+            "session": "Session",
+            "week": "Week",
+            "month": "Month",
+            "total": "Total",
+            "goal": "Amount from goal data"
+        },
+        "group": "Custom Labels"
+    },
+    "label4Text": {
+        "label": "Label 4 Text",
+        "type": "text",
+        "value": "Top Cheerer",
+        "group": "Custom Labels"
+    },
+    "label4Type": {
+        "type": "dropdown",
+        "label": "Label 4 Event type:",
+        "value": "cheer-monthly-top-donator",
+        "options": {
+            "follower-latest": "Latest follower",
+            "subscriber-latest": "Latest subscriber",
+            "tip-latest": "Latest tip",
+            "cheer-latest": "Latest cheer",
+            "host-latest": "Latest host",
+            "raid-latest": "Latest raid",
+            "subscriber-new-latest": "(new)Subscriber latest",
+            "subscriber-resub-latest": "(resub)Subscriber latest",
+            "subscriber-gifted-latest": "(gifted)Subscriber latest",
+            "subscriber-alltime-gifter": "Subscriber Alltime gifter",
+            "tip-alltime-top-donation": "Tip alltime top donation",
+            "tip-alltime-top-donator": "Tip alltime top donator",
+            "tip-monthly-top-donation": "Tip monthly top donation",
+            "tip-monthly-top-donator": "Tip monthly top donator",
+            "tip-weekly-top-donation": "Tip weekly top donation",
+            "tip-weekly-top-donator": "Tip weekly top donator",
+            "tip-session-top-donation": "Tip session top donation",
+            "tip-session-top-donator": "Tip session top donator",
+            "cheer-alltime-top-donation": "Cheer alltime top donation",
+            "cheer-alltime-top-donator": "Cheer alltime top donator",
+            "cheer-monthly-top-donation": "Cheer monthly top donation",
+            "cheer-monthly-top-donator": "Cheer monthly top donator",
+            "cheer-weekly-top-donation": "Cheer weekly top donation",
+            "cheer-weekly-top-donator": "Cheer weekly top donator",
+            "cheer-session-top-donation": "Cheer session top donation",
+            "cheer-session-top-donator": "Cheer session top donator",
+            "follower": "Follower count",
+            "subscriber": "Subscriber  count",
+            "subscriber-new": "Subscriber new  count(session only)",
+            "subscriber-resub": "Subscriber resub  count(session only)",
+            "subscriber-gifted": "Subscriber gifted  count(session only)",
+            "tip": "Tip amount",
+            "cheer": "Bits amount",
+            "subscriber-points": "Subscriber points"
+        },
+        "group": "Custom Labels"
+    },
+    "label4Period": {
+        "type": "dropdown",
+        "label": "Label 4 Pick period: (if count/amount is selected)",
+        "value": "month",
+        "options": {
+            "session": "Session",
+            "week": "Week",
+            "month": "Month",
+            "total": "Total",
+            "goal": "Amount from goal data"
+        },
+        "group": "Custom Labels"
+    },
+    "fontSize": {
+        "type": "number",
+        "label": "Font size",
+        "value": 24,
+        "group": "Chat - Typography"
+    },
+    "fontWeight": {
+        "label": "Font Weight",
+        "type": "dropdown",
+        "value": "400",
+        "options": {
+            "300": "Light (300)",
+            "400": "Book (400)",
+            "500": "Medium (500)",
+            "600": "Demi (600)",
+            "700": "Heavy (700)",
+            "800": "Extra Bold (800)"
+        },
+        "group": "Chat - Typography"
+    },
+    "emoteSize": {
+        "type": "number",
+        "label": "Emote size",
+        "value": 24,
+        "group": "Chat - Typography"
+    },
+    "alignMessages": {
+        "label": "Align Messages",
+        "type": "dropdown",
+        "value": "flex",
+        "options": {
+            "flex": "Bottom",
+            "block": "Top"
+        },
+        "group": "Chat - Typography"
+    },
+    "nickColor": {
+        "type": "dropdown",
+        "label": "Nickname color:",
+        "value": "user",
+        "options": {
+            "user": "as on twitch",
+            "messagecolor": "same as message text",
+            "custom": "specified below",
+            "remove": "Remove username"
+        },
+        "group": "Chat - Typography"
+    },
+    "messagesLimit": {
+        "type": "number",
+        "label": "Messages limit",
+        "value": 4,
+        "group": "Chat - Settings"
+    },
+    "hideAfter": {
+        "type": "number",
+        "label": "Hide after seconds (999 to disable)",
+        "value": 999,
+        "group": "Chat - Settings"
+    },
+    "hideCommands": {
+        "label": "Hide lines starting with ! (!command)",
+        "type": "dropdown",
+        "value": "yes",
+        "options": {
+            "yes": "Yes",
+            "no": "No"
+        },
+        "group": "Chat - Settings"
+    },
+    "ignoredUsers": {
+        "label": "Ignored users (comma separated)",
+        "type": "text",
+        "value": "StreamElements,OtherBot",
+        "group": "Chat - Settings"
+    },
+    "animationIn": {
+        "type": "dropdown",
+        "label": "Animation In:",
+        "value": "none",
+        "options": {
+            "none": "None",
+            "bounceIn": "bounceIn",
+            "bounceInDown": "bounceInDown",
+            "bounceInLeft": "bounceInLeft",
+            "bounceInRight": "bounceInRight",
+            "bounceInUp": "bounceInUp",
+            "fadeIn": "fadeIn",
+            "fadeInDown": "fadeInDown",
+            "fadeInDownBig": "fadeInDownBig",
+            "fadeInLeft": "fadeInLeft",
+            "fadeInLeftBig": "fadeInLeftBig",
+            "fadeInRight": "fadeInRight",
+            "fadeInRightBig": "fadeInRightBig",
+            "fadeInUp": "fadeInUp",
+            "fadeInUpBig": "fadeInUpBig",
+            "flipInX": "flipInX",
+            "flipInY": "flipInY",
+            "lightSpeedIn": "lightSpeedIn",
+            "rotateIn": "rotateIn",
+            "rotateInDownLeft": "rotateInDownLeft",
+            "rotateInDownRight": "rotateInDownRight",
+            "rotateInUpLeft": "rotateInUpLeft",
+            "rotateInUpRight": "rotateInUpRight",
+            "slideInUp": "slideInUp",
+            "slideInDown": "slideInDown",
+            "slideInLeft": "slideInLeft",
+            "slideInRight": "slideInRight",
+            "zoomIn": "zoomIn",
+            "zoomInDown": "zoomInDown",
+            "zoomInLeft": "zoomInLeft",
+            "zoomInRight": "zoomInRight",
+            "zoomInUp": "zoomInUp",
+            "jackInTheBox": "jackInTheBox",
+            "rollIn": "rollIn"
+        },
+        "group": "Chat - Settings"
+    },
+    "animationOut": {
+        "type": "dropdown",
+        "label": "Animation Out:",
+        "value": "none",
+        "options": {
+            "none": "None",
+            "bounceOut": "bounceOut",
+            "bounceOutDown": "bounceOutDown",
+            "bounceOutLeft": "bounceOutLeft",
+            "bounceOutRight": "bounceOutRight",
+            "bounceOutUp": "bounceOutUp",
+            "fadeOut": "fadeOut",
+            "fadeOutDown": "fadeOutDown",
+            "fadeOutDownBig": "fadeOutDownBig",
+            "fadeOutLeft": "fadeOutLeft",
+            "fadeOutLeftBig": "fadeOutLeftBig",
+            "fadeOutRight": "fadeOutRight",
+            "fadeOutRightBig": "fadeOutRightBig",
+            "fadeOutUp": "fadeOutUp",
+            "fadeOutUpBig": "fadeOutUpBig",
+            "flipOutX": "flipOutX",
+            "flipOutY": "flipOutY",
+            "lightSpeedOut": "lightSpeedOut",
+            "rotateOut": "rotateOut",
+            "rotateOutDownLeft": "rotateOutDownLeft",
+            "rotateOutDownRight": "rotateOutDownRight",
+            "rotateOutUpLeft": "rotateOutUpLeft",
+            "rotateOutUpRight": "rotateOutUpRight",
+            "slideOutUp": "slideOutUp",
+            "slideOutDown": "slideOutDown",
+            "slideOutLeft": "slideOutLeft",
+            "slideOutRight": "slideOutRight",
+            "zoomOut": "zoomOut",
+            "zoomOutDown": "zoomOutDown",
+            "zoomOutLeft": "zoomOutLeft",
+            "zoomOutRight": "zoomOutRight",
+            "zoomOutUp": "zoomOutUp",
+            "rollOut": "rollOut"
+        },
+        "group": "Chat - Settings"
+    },
+    "chatBackgroundBlendMode": {
+        "label": "Chat Background Blend Mode",
+        "type": "dropdown",
+        "value": "multiply",
+        "options": {
+            "normal": "Normal",
+            "multiply": "Multiply"
+        },
+        "group": "Chat - Settings"
+    },
+    "chatBackgroundColor": {
+        "type": "colorpicker",
+        "label": "Chat Background Color",
+        "value": "rgba(59, 60, 152, 0.75)",
+        "group": "Chat - Settings"
+      },
+    "testMessage": {
+        "type": "button",
+        "label": "Test message",
+        "value": "Test message",
+        "group": "Test"
+    },
+    "widgetName": {
+        "type": "hidden",
+        "value": "Whispurr's Overlay"
+    },
+    "widgetAuthor": {
+        "type": "hidden",
+        "value": "WhispurrAudio"
+    },
+    "widgetVersion": {
+        "type": "hidden",
+        "value": "1.0"
+    }
+}

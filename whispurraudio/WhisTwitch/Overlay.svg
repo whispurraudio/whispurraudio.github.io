@@ -1,0 +1,66 @@
+<html>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg
+  
+  viewBox="0 0 1920 1080"
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1">
+  <defs>
+    <!-- Filter declaration -->
+    <filter
+      id="MyFilter"
+      filterUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1920"
+      height="1080">
+      <!-- offsetBlur -->
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur" />
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur" />
+
+      <!-- litPaint -->
+      <feSpecularLighting
+        in="blur"
+        surfaceScale="10"
+        specularConstant="1"
+        specularExponent="1"
+        lighting-color="#ffffff"
+        result="specOut">
+        <fePointLight x="-1000" y="-1000" z="1000" />
+      </feSpecularLighting>
+      <feComposite
+        in="specOut"
+        in2="SourceAlpha"
+        operator="in"
+        result="specOut" />
+      <feComposite
+        in="SourceGraphic"
+        in2="specOut"
+        operator="arithmetic"
+        k1="0"
+        k2="1"
+        k3="1"
+        k4="0"
+        result="litPaint" />
+
+      <!-- merge offsetBlur + litPaint -->
+      <!-- <feMerge>
+        <feMergeNode in="offsetBlur" />
+        <feMergeNode in="litPaint" />
+      </feMerge> -->
+    </filter>
+  </defs>
+
+  <!-- Graphic elements -->
+  <g filter="url(#MyFilter)">
+	  <rect x="12" y="12" rx="36" ry="36" width="1488" height="826.5" stroke="#9484B4" fill="transparent" stroke-width="24"/>
+	  <!-- <rect x="12" y="12" rx="36" ry="36" width="1488" height="826.5" stroke="#9484B4" fill="transparent" stroke-width="24"/> -->
+    <!-- <path
+      fill="#D90000"
+      d="M60,56 c-30,0 -30,-40 0,-40 h80 c30,0 30,40 0,40z" />
+    <g fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana">
+      <text x="52" y="52">SVG</text>
+    </g> -->
+  </g>
+</svg>
+</html>
