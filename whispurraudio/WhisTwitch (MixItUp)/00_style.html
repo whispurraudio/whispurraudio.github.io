@@ -1,0 +1,181 @@
+<style>
+    @import url("https://use.typekit.net/stb6olv.css");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+
+    body {
+        margin: 0;
+        font-family: futura-pt, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1;
+        color: white;
+        font-size: 30px;
+        text-shadow: 0px 0px 5px rgb(59, 60, 152), 0px 0px 10px rgb(59, 60, 152);
+    }
+    .gradient-background {
+        background: linear-gradient(315deg, #2f23ac, #7d35a5, #e54c9c);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+    }
+
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: 210px 400px 792px 24px 24px 350px;
+        grid-template-rows: 202px 432px 112px 24px 214px;
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        width: 1920px;
+        height: 1080px;
+        padding: 0;
+    }
+
+    .gridAreaGame {
+        grid-area: 1 / 1 / span 4 / span 4;
+        /* background: #73ad21; */
+    }
+
+    .gridAreaName {
+        grid-area: 1 / 4 / 1 / span 3;
+        /* background: purple; */
+    }
+
+    .gridAreaGamePoster {
+        grid-area: 4 / 1 / span 2 / span 1;
+        /* background: blue; */
+        margin: 12px;
+    }
+
+    .gridAreaCam {
+        grid-area: 3 / 6 / span 3 / span 1;
+        /* background: yellow; */
+    }
+
+    .gridAreaFooter {
+        grid-area: 5 / 3 / span 1 / span 1;
+        /* background: red; */
+    }
+
+    .gridAreaGameName {
+        grid-area: 5 / 2 / span 1 / span 1;
+        /* background: #73ad21; */
+    }
+
+    .gridAreaFooter,
+    .gridAreaGameName {
+        margin-bottom: 12px;
+    }
+
+    .gridAreaBG {
+        grid-area: 1 / 1 / span 5 / span 6;
+        clip-path: path(
+            "M1462,0v190c0,13.25,11.12,24,24,24s24,10.75,24,24v568c0,26.51-21.49,48-48,48H246c-13.25,0-24-10.75-24-24s-10.75-24-24-24L0,806v274h1920V0H1462z"
+        );
+        z-index: -2;
+    }
+
+    .gridAreaOverlay {
+        grid-area: 1 / 1 / span 5 / span 6;
+    }
+
+    .gridAreaChat {
+        grid-area: 2 / 6 / span 1 / span 1;
+        padding: 12px;
+        /* margin: 24px 0px 24px 24px; */
+        z-index: -1;
+        background-color: rgba(59, 60, 152, 0.75);
+        background-blend-mode: multiply;
+    }
+
+    .gridAreaGamePoster img {
+        display: block;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .boxOutline {
+        fill: #9484b4;
+    }
+
+    #nowPlayingArt {
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    #nowPlaying {
+        font-size: 48px;
+        font-weight: normal;
+        text-transform: lowercase;
+    }
+
+    #nowPlayingName {
+        overflow-wrap: break-word;
+        font-size: 54px;
+        font-weight: 700;
+        max-width: 400px;
+        text-transform: lowercase;
+    }
+
+    .boxShadow {
+        box-shadow: 0px 0px 5px rgb(59, 60, 152), 0px 0px 10px rgb(59, 60, 152);
+    }
+
+    .nowPlayingGrid {
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        grid-template-columns: 100%;
+        align-items: end;
+        height: 100%;
+    }
+
+    .infoGrid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, auto);
+        grid-template-rows: repeat(2, min-content) auto repeat(2, min-content);
+        grid-column-gap: 24px;
+        grid-row-gap: 0px;
+        text-align: right;
+    }
+
+    .miscArea {
+        grid-area: 1 / 1 / 6 / 2;
+    }
+
+    /* .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+    } */
+
+    .mySlides {
+        display: none;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
