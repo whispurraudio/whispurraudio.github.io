@@ -1,41 +1,68 @@
 <style>
     @import url(https://use.typekit.net/stb6olv.css);
-    @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
+
+    #nowPlaying,
+    .footerTitle {
+        font-size: 1.5em;
+    }
+
+    #nowPlaying,
+    #nowPlayingName,
+    .footerGrid,
+    .scorebar-fill-text {
+        text-transform: lowercase;
+    }
 
     :root {
         --whis-blue: #2f23ac;
         --whis-purple: #7d35a5;
         --whis-pink: #e54c9c;
-        --shadow-5px: 0px 0px 5px rgba(0, 0, 0, 0.5);
-        --shadow-10px: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        --shadow-0125em: 0px 0px 0.125em rgba(0, 0, 0, 0.5);
+        --shadow-025em: 0px 0px 0.25em rgba(0, 0, 0, 0.5);
+        --footer-grid-content-height: 116px;
+        --font-light: 300;
+        --font-book: 400;
+        --font-medium: 500;
+        --font-demi: 600;
+        --font-heavy: 700;
+        --font-bold: 700;
+        --font-extra-bold: 800;
     }
 
     body,
     hr {
         margin: 0;
     }
+
     .infoGrid,
     .parent {
         grid-column-gap: 24px;
         display: grid;
     }
-    #nowPlaying,
-    #nowPlayingName,
-    .footerGrid {
-        text-transform: lowercase;
-    }
+
     body {
         font-family: futura-pt, sans-serif;
-        font-weight: 400;
+        font-weight: var(--font-book);
         font-style: normal;
         line-height: 1;
         color: #fff;
         font-size: 32px;
-        text-shadow: var(--shadow-10px);
+        text-shadow: var(--shadow-025em);
     }
+
+    #nowPlayingName,
+    .footerTitle,
+    .futura-pt-bold,
+    .scorebar-fill-text {
+        font-family: futura-pt-bold;
+        font-weight: 700;
+    }
+
     .footerGrid hr {
         border: 1px solid #fff;
+        grid-row: 2;
     }
+
     .gradient-background {
         background: linear-gradient(
             315deg,
@@ -49,15 +76,18 @@
         width: 1920px;
         height: 1080px;
     }
+
     @keyframes gradient-animation {
         0%,
         100% {
             background-position: 0 50%;
         }
+
         50% {
             background-position: 100% 50%;
         }
     }
+
     .parent {
         grid-template-columns: 210px 400px 792px 24px 24px 350px;
         grid-template-rows: 202px 432px 112px 24px 214px;
@@ -66,40 +96,50 @@
         height: 1080px;
         padding: 0;
     }
+
     .gridAreaGame {
         grid-area: 1/1 / span 4 / span 4;
     }
+
     .gridAreaName {
         grid-area: 1/4/1 / span 3;
     }
+
     .gridAreaGamePoster {
         grid-area: 4/1 / span 2 / span 1;
         margin: 12px;
     }
+
     .gridAreaCam {
         grid-area: 3/6 / span 3 / span 1;
     }
+
     .gridAreaFooter {
         grid-area: 5/3 / span 1 / span 1;
         margin-top: 12px;
     }
+
     .gridAreaGameName {
         grid-area: 5/2 / span 1 / span 1;
     }
+
     .gridAreaBG,
     .gridAreaOverlay {
         grid-area: 1/1 / span 5 / span 6;
     }
+
     .gridAreaFooter,
     .gridAreaGameName {
         margin-bottom: 12px;
     }
+
     .gridAreaBG {
         clip-path: path(
             "M1462,0v190c0,13.25,11.12,24,24,24s24,10.75,24,24v568c0,26.51-21.49,48-48,48H246c-13.25,0-24-10.75-24-24s-10.75-24-24-24L0,806v274h1920V0H1462z"
         );
         z-index: -2;
     }
+
     .gridAreaChat {
         grid-area: 2/6 / span 1 / span 1;
         padding: 12px;
@@ -107,36 +147,34 @@
         background-color: rgba(59, 60, 152, 0.75);
         background-blend-mode: multiply;
     }
+
     .gridAreaGamePoster img {
         display: block;
         height: 100%;
         margin-left: auto;
         margin-right: auto;
     }
+
     .boxOutline {
         fill: #9484b4;
     }
+
     #nowPlayingArt {
         object-fit: cover;
         border-radius: 12px;
     }
-    #nowPlaying {
-        font-size: 48px;
-        font-weight: 400;
-    }
-    #nowPlayingName,
-    .footerTitle {
-        font-weight: 700;
-        font-size: 54px;
-    }
+
     #nowPlayingName {
+        font-size: 54px;
         overflow-wrap: break-word;
         max-width: 400px;
     }
+
     .boxShadow,
     .footerGrid hr {
-        box-shadow: var(--shadow-5px);
+        box-shadow: var(--shadow-0125em);
     }
+
     .nowPlayingGrid {
         display: grid;
         grid-template-rows: 1fr min-content;
@@ -144,44 +182,77 @@
         align-items: end;
         height: 100%;
     }
+
     .infoGrid {
         grid-template-columns: 1fr repeat(2, auto);
         grid-template-rows: repeat(2, min-content) auto repeat(2, min-content);
         grid-row-gap: 0px;
         text-align: right;
     }
-    .miscArea {
-        grid-area: 1/1/6/2;
-    }
+
     .footerGrid {
         display: grid;
         grid-auto-columns: 1fr;
-        grid-template-rows: 64px min-content 1fr;
+        grid-template-rows: 1.5em 2px var(--footer-grid-content-height);
         grid-row-gap: 12px;
         height: 100%;
     }
-    .footerGrid hr {
-        grid-row: 2;
-    }
+
     .footerTitleBar {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
     }
+
     .footerTitle {
-        white-space: left;
+        white-space: nowrap;
     }
+
     .footerSubtitle {
-        font-weight: 400;
-        font-size: 32;
+        font-size: 0.75em;
         text-align: right;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
+
     .footerContent {
         grid-row: 3;
         justify-content: center;
         align-content: center;
     }
+
     .imageShadow {
-        filter: drop-shadow(var(--shadow-5px));
+        filter: drop-shadow(var(--shadow-0125em));
+    }
+
+    .scorebar-container {
+        width: 100%;
+        display: flex;
+        gap: 0.25em;
+        height: 1.25em;
+        overflow: hidden;
+        border-radius: 1em;
+    }
+
+    .scorebar-fill {
+        color: #7d35a5 !important;
+        background-color: #fff !important;
+        padding: 0.01em 0.5em;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 0.25em;
+    }
+
+    .scorebar-fill-text {
+        font-size: 1em;
+        text-shadow: none;
+        overflow: clip;
+        white-space: nowrap;
+        text-align: center;
     }
 </style>

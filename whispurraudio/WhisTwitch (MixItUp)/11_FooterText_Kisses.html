@@ -1,113 +1,51 @@
 <style>
-    .scorebar-background {
-        color: #fff !important;
-        background-color: rgba(0, 0, 0, 0) !important;
-        background-blend-mode: multiply;
-        width: 100%;
-        display: flex;
-        height: 65%;
-    }
-
-    .scorebar-round-small {
-        border-radius: 2px;
-    }
-    .scorebar-round,
-    .scorebar-round-medium {
-        border-radius: 4px;
-    }
-    .scorebar-round-left,
-    .scorebar-round-medium-left {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-    }
-    .scorebar-round-right,
-    .scorebar-round-medium-right {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-    }
-    .scorebar-round-large {
-        border-radius: 8px;
-    }
-    .scorebar-round-xlarge {
-        border-radius: 16px;
-    }
-    .scorebar-round-xlarge-left {
-        border-top-left-radius: 16px;
-        border-bottom-left-radius: 16px;
-    }
-    .scorebar-round-xlarge-right {
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-    }
-    .scorebar-round-xxlarge-left {
-        border-top-left-radius: 32px;
-        border-bottom-left-radius: 32px;
-    }
-    .scorebar-round-xxlarge-right {
-        border-top-right-radius: 32px;
-        border-bottom-right-radius: 32px;
-    }
-
-    .scorebar-fill {
-        color: #7d35a5 !important;
-        background-color: #fff !important;
-        padding: 0.01em 16px;
-        margin: 6px;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .scorebar-fillText {
-        font-size: 42px;
-        text-shadow: none;
-        font-weight: 600;
-        text-transform: lowercase;
-        overflow: clip;
-        white-space: nowrap;
-        text-align: center;
+    :root {
+        --lenny-kisses: $lennykisses;
+        --fanta-kisses: $fantakisses;
+        --total-kisses: calc(var(--lenny-kisses) + var(--fanta-kisses));
     }
 
     .kissesScores {
         display: grid;
-        grid-template-columns: 100px 1fr 100px;
-        grid-column-gap: 12px;
+        grid-template-columns: min-content 1fr min-content;
+        grid-column-gap: 0.25em;
         justify-content: center;
         height: 100%;
     }
 
-    .kissesScoresLabel {
-        font-size: 32px;
-        font-weight: 600;
+    .kissesScoresLabelText {
+        font-size: 1em;
+        font-weight: var(--font-book);
         text-transform: lowercase;
         text-align: center;
         z-index: 1;
-        top: -85%;
+        top: -95%;
         position: relative;
     }
 
     .kissesScoresBars {
-        grid-column: 2;
         display: flex;
         flex-wrap: wrap;
         align-content: center;
     }
 
     .kissesScoresLenny {
-        width: calc(100% * $lennykisses / ($lennykisses + $fantakisses));
-        /* max-width: calc(100% * $lennykisses / $maxkisses); */
+        width: calc(100% * var(--lenny-kisses) / var(--total-kisses));
     }
 
     .kissesScoresFanta {
-        width: calc(100% * $fantakisses / ($lennykisses + $fantakisses));
-        /* max-width: calc(100% * $fantakisses / $maxkisses); */
+        width: calc(100% * var(--fanta-kisses) / var(--total-kisses));
     }
 
     .kissesScoresLabelImage {
-        height: 96px;
+        height: var(--footer-grid-content-height);
         object-fit: scale-down;
         z-index: 0;
+    }
+
+    .kissesScoresLabel {
+        height: var(--footer-grid-content-height);
+        width: fit-content;
     }
 </style>
 <div class="parent">
@@ -121,35 +59,33 @@
             </div>
             <hr />
             <div class="footerContent kissesScores">
-                <div style="height: 100px">
+                <div class="kissesScoresLabel">
                     <img
                         src="https://whispurraudio.github.io/whispurraudio/WhisTwitch%20%28MixItUp%29/LennyHead.png"
                         class="kissesScoresLabelImage imageShadow"
                     />
-                    <div class="kissesScoresLabel">lenny</div>
+                    <div class="kissesScoresLabelText">lenny</div>
                 </div>
                 <div class="kissesScoresBars">
-                    <div
-                        class="scorebar-background scorebar-round-xxlarge-left scorebar-round-xxlarge-right"
-                    >
-                        <div
-                            class="boxShadow scorebar-fill scorebar-round-xxlarge-left scorebar-round-right kissesScoresLenny"
-                        >
-                            <div class="scorebar-fillText">$lennykisses 💋</div>
+                    <div class="scorebar-container imageShadow">
+                        <div class="scorebar-fill kissesScoresLenny">
+                            <div class="scorebar-fill-text">
+                                $lennykisses 💋
+                            </div>
                         </div>
-                        <div
-                            class="boxShadow scorebar-fill scorebar-round-xxlarge-right scorebar-round-left kissesScoresFanta"
-                        >
-                            <div class="scorebar-fillText">$fantakisses 💋</div>
+                        <div class="scorebar-fill kissesScoresFanta">
+                            <div class="scorebar-fill-text">
+                                $fantakisses 💋
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div style="height: 100px">
+                <div class="kissesScoresLabel">
                     <img
                         src="https://whispurraudio.github.io/whispurraudio/WhisTwitch%20%28MixItUp%29/FantaHead.png"
                         class="kissesScoresLabelImage imageShadow"
                     />
-                    <div class="kissesScoresLabel">fanta</div>
+                    <div class="kissesScoresLabelText">fanta</div>
                 </div>
             </div>
         </div>
