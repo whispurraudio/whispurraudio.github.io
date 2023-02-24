@@ -1,115 +1,112 @@
 <style>
-    @import url("https://use.typekit.net/stb6olv.css");
-    @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+    @import url(https://use.typekit.net/stb6olv.css);
+    @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
 
-    body {
+    :root {
+        --whis-blue: #2f23ac;
+        --whis-purple: #7d35a5;
+        --whis-pink: #e54c9c;
+        --shadow-5px: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        --shadow-10px: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    body,
+    hr {
         margin: 0;
+    }
+    .infoGrid,
+    .parent {
+        grid-column-gap: 24px;
+        display: grid;
+    }
+    #nowPlaying,
+    #nowPlayingName,
+    .footerGrid {
+        text-transform: lowercase;
+    }
+    body {
         font-family: futura-pt, sans-serif;
         font-weight: 400;
         font-style: normal;
         line-height: 1;
-        color: white;
-        font-size: 30px;
-        text-shadow: 0px 0px 5px rgb(59, 60, 152), 0px 0px 10px rgb(59, 60, 152);
+        color: #fff;
+        font-size: 32px;
+        text-shadow: var(--shadow-10px);
     }
-
-    hr {
+    .footerGrid hr {
         border: 1px solid #fff;
-        margin: 0;
-        box-shadow: 0px 0px 5px rgb(59, 60, 152), 0px 0px 10px rgb(59, 60, 152);
     }
-
     .gradient-background {
-        background: linear-gradient(315deg, #2f23ac, #7d35a5, #e54c9c);
+        background: linear-gradient(
+            315deg,
+            var(--whis-blue),
+            var(--whis-purple),
+            var(--whis-pink)
+        );
         background-size: 180% 180%;
-        animation: gradient-animation 18s ease infinite;
+        animation: 18s infinite gradient-animation;
         margin: 0;
         width: 1920px;
         height: 1080px;
     }
-
     @keyframes gradient-animation {
-        0% {
-            background-position: 0% 50%;
+        0%,
+        100% {
+            background-position: 0 50%;
         }
         50% {
             background-position: 100% 50%;
         }
-        100% {
-            background-position: 0% 50%;
-        }
     }
-
     .parent {
-        display: grid;
         grid-template-columns: 210px 400px 792px 24px 24px 350px;
         grid-template-rows: 202px 432px 112px 24px 214px;
-        grid-column-gap: 24px;
         grid-row-gap: 24px;
         width: 1920px;
         height: 1080px;
         padding: 0;
     }
-
     .gridAreaGame {
-        grid-area: 1 / 1 / span 4 / span 4;
-        /* background: #73ad21; */
+        grid-area: 1/1 / span 4 / span 4;
     }
-
     .gridAreaName {
-        grid-area: 1 / 4 / 1 / span 3;
-        /* background: purple; */
+        grid-area: 1/4/1 / span 3;
     }
-
     .gridAreaGamePoster {
-        grid-area: 4 / 1 / span 2 / span 1;
-        /* background: blue; */
+        grid-area: 4/1 / span 2 / span 1;
         margin: 12px;
     }
-
     .gridAreaCam {
-        grid-area: 3 / 6 / span 3 / span 1;
-        /* background: yellow; */
+        grid-area: 3/6 / span 3 / span 1;
     }
-
     .gridAreaFooter {
-        grid-area: 5 / 3 / span 1 / span 1;
-        margin-bottom: 12px;
+        grid-area: 5/3 / span 1 / span 1;
         margin-top: 12px;
-        /* background: red; */
     }
-
     .gridAreaGameName {
-        grid-area: 5 / 2 / span 1 / span 1;
-        /* background: #73ad21; */
+        grid-area: 5/2 / span 1 / span 1;
     }
-
+    .gridAreaBG,
+    .gridAreaOverlay {
+        grid-area: 1/1 / span 5 / span 6;
+    }
     .gridAreaFooter,
     .gridAreaGameName {
         margin-bottom: 12px;
     }
-
     .gridAreaBG {
-        grid-area: 1 / 1 / span 5 / span 6;
         clip-path: path(
             "M1462,0v190c0,13.25,11.12,24,24,24s24,10.75,24,24v568c0,26.51-21.49,48-48,48H246c-13.25,0-24-10.75-24-24s-10.75-24-24-24L0,806v274h1920V0H1462z"
         );
         z-index: -2;
     }
-
-    .gridAreaOverlay {
-        grid-area: 1 / 1 / span 5 / span 6;
-    }
-
     .gridAreaChat {
-        grid-area: 2 / 6 / span 1 / span 1;
+        grid-area: 2/6 / span 1 / span 1;
         padding: 12px;
-        /* margin: 24px 0px 24px 24px; */
         z-index: -1;
         background-color: rgba(59, 60, 152, 0.75);
         background-blend-mode: multiply;
     }
-
     .gridAreaGamePoster img {
         display: block;
         height: 100%;
@@ -119,30 +116,27 @@
     .boxOutline {
         fill: #9484b4;
     }
-
     #nowPlayingArt {
         object-fit: cover;
         border-radius: 12px;
     }
-
     #nowPlaying {
         font-size: 48px;
-        font-weight: normal;
-        text-transform: lowercase;
+        font-weight: 400;
     }
-
+    #nowPlayingName,
+    .footerTitle {
+        font-weight: 700;
+        font-size: 54px;
+    }
     #nowPlayingName {
         overflow-wrap: break-word;
-        font-size: 54px;
-        font-weight: 700;
         max-width: 400px;
-        text-transform: lowercase;
     }
-
-    .boxShadow {
-        box-shadow: 0px 0px 5px rgb(59, 60, 152), 0px 0px 10px rgb(59, 60, 152);
+    .boxShadow,
+    .footerGrid hr {
+        box-shadow: var(--shadow-5px);
     }
-
     .nowPlayingGrid {
         display: grid;
         grid-template-rows: 1fr min-content;
@@ -150,59 +144,44 @@
         align-items: end;
         height: 100%;
     }
-
     .infoGrid {
-        display: grid;
         grid-template-columns: 1fr repeat(2, auto);
         grid-template-rows: repeat(2, min-content) auto repeat(2, min-content);
-        grid-column-gap: 24px;
         grid-row-gap: 0px;
         text-align: right;
     }
-
     .miscArea {
-        grid-area: 1 / 1 / 6 / 2;
+        grid-area: 1/1/6/2;
     }
-
     .footerGrid {
         display: grid;
         grid-auto-columns: 1fr;
         grid-template-rows: 60px min-content 1fr;
         grid-row-gap: 12px;
-        text-transform: lowercase;
-        height:100%;
+        height: 100%;
     }
-
     .footerGrid hr {
         grid-row: 2;
     }
-
     .footerTitleBar {
         display: flex;
         justify-content: space-between;
-        align-content: flex-end;
+        align-items: flex-end;
     }
-
     .footerTitle {
-        font-weight: 700;
-        font-size: 54px;
         white-space: left;
     }
-
     .footerSubtitle {
-        font-weight: normal;
+        font-weight: 400;
         font-size: 32;
         text-align: right;
     }
-
-    .footerTitle,
-    .footerSubtitle {
-        grid-row: 1;
-    }
-
     .footerContent {
         grid-row: 3;
         justify-content: center;
         align-content: center;
+    }
+    .imageShadow {
+        filter: drop-shadow(var(--shadow-5px));
     }
 </style>
