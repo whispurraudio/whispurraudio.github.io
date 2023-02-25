@@ -1,0 +1,65 @@
+<style>
+    .statBlockGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 12px;
+        column-gap: 24px;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .statBlock {
+        display: flex;
+        justify-content: inherit;
+        align-content: inherit;
+        flex-direction: column;
+        text-align: center;
+        text-transform: lowercase;
+        width: 360px;
+        height: 89px;
+    }
+
+    .statBlockTitle {
+        font-size: 1em;
+    }
+
+    .statBlockTitle,
+    .statBlockName {
+        max-width: 360px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .statBlockName {
+        font-size: 1.25em;
+        font-family: futura-pt-bold;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+</style>
+<div class="parent">
+    <div class="gridAreaFooter">
+        <div class="statBlockGrid">
+            <div class="statBlock">
+                <div class="statBlockTitle">latest follower</div>
+                <div class="statBlockName">$customLatestFollower</div>
+            </div>
+            <div class="statBlock">
+                <div class="statBlockTitle">latest subscriber</div>
+                <div class="statBlockName">$customLatestSubscriber</div>
+            </div>
+            <div class="statBlock">
+                <div class="statBlockTitle">top cheerer (monthly)</div>
+                <div class="statBlockName">$customTopBitsCheered</div>
+            </div>
+            <div class="statBlock">
+                <div class="statBlockTitle">latest cheer</div>
+                <div class="statBlockName">$customLatestBitsCheered</div>
+            </div>
+        </div>
+    </div>
+</div>
