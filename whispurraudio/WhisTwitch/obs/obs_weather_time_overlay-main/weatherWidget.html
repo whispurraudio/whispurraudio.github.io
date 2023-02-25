@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+weatherWidget with time overlay for OBS
+Author: Norman Gholson IV 2022-2023
+requires free private API Key from OpenWeatherMap.org
+https://openweathermap.org/
+-->
+<html>
+    <head>
+        <script>
+            // ------------------------------------------------CHANGE THESE SETTINGS ----------------------------------------------- */
+            // REQUIRED
+            var yourApiKey = "c0aa4c6971196f03c29ded203534c31c"; // your OpenWeatherMap Api key here
+            var yourCity = "Pineville, LA, US"; // your city name, ex: "London, UK" or "Las Vegas, NV, US"
+            var yourUnits = "imperial"; // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+
+            // OPTIONAL
+            var weatherDisplay = "whispurr"; // options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
+            var weatherIcons = 1; // show Weather status icons in display 1=on  0=off
+            var iconPack = 2; // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.
+            var iconHeight = "34px"; // weather icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)
+            var textSize = "32pt"; // font size
+            var textSizeTemp = "48pt";
+            var textColor = "white"; // font color
+            var weatherBackground = "lightgrey"; // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
+            var dynamicBackground = 0; // weather background changes based on day or night 1=on 0=off
+            var clockSeperator = ""; // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
+            var time24hour = false; // 24 hour time.  true or false
+            var weatherBorder = "0"; // border size in pixels. default is 0
+            var autoCheckUpdates = true; // Automatically check for updates.
+
+            // ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://use.typekit.net/stb6olv.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../css/style.css"
+        />
+        <style>
+            :root {
+                --wBack: ;
+                --wBorder: 0;
+                --txtSizeTemp: ;
+            }
+
+            .weather-box {
+                border: var(--wBorder) solid #000;
+                border-radius: 5px;
+                text-align: left;
+                color: var(--txtColor);
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 1px;
+                padding-bottom: 2px;
+            }
+
+            .weather-icon {
+                height: calc(1em + 2px);
+            }
+
+            .weather-box-temp {
+                font-size: 1.5em;
+                line-height: 125%;
+            }
+
+            #id-weather {
+                gap: 0.5em;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+            }
+        </style>
+        <script>
+            var weatherVersion;
+            var weatherFriendly;
+        </script>
+        <script src="https://g4billiards.com/ver.js"></script>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <script>
+            var wVer = 101;
+            if (
+                weatherVersion > wVer &&
+                localStorage.getItem(wVer + "." + weatherVersion + "update") !=
+                    1 &&
+                autoCheckUpdates == true
+            ) {
+                if (
+                    confirm(
+                        "g4Weather v" +
+                            weatherFriendly +
+                            " Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update"
+                    ) != true
+                ) {
+                    localStorage.setItem(
+                        wVer + "." + weatherVersion + "update",
+                        1
+                    );
+                }
+            }
+        </script>
+        <!-- <center> -->
+        <div
+            class="weather-box weather-box-temp futura-pt-bold"
+            id="id-temp"
+        ></div>
+        <div
+            class="weather-box"
+            id="id-weather"
+        ></div>
+        <!-- </center> -->
+        <script>
+            var language =
+                window.navigator.userLanguage || window.navigator.language;
+            const regionTranslate = new Intl.DisplayNames([language], {
+                type: "region",
+            });
+            refreshData();
+            function weatherCheck() {
+                var time =
+                    time24hour != true
+                        ? currentTime(new Date())
+                        : time24(new Date());
+                $.ajax({
+                    url: "https://api.openweathermap.org/data/2.5/weather",
+                    data: {
+                        units: `${yourUnits}`,
+                        q: `${yourCity}`,
+                        appid: `${yourApiKey}`,
+                        lang: `${language}`,
+                    },
+                    dataType: "json",
+                    success: function (apiResponse) {
+                        if (dynamicBackground == 1) {
+                            if (apiResponse.weather[0].icon.slice(2) == "n") {
+                                document
+                                    .querySelector(":root")
+                                    .style.setProperty(
+                                        "--wBack",
+                                        "linear-gradient(to bottom, black , dimgrey"
+                                    );
+                                document
+                                    .querySelector(":root")
+                                    .style.setProperty("--txtColor", "white");
+                            } else {
+                                document
+                                    .querySelector(":root")
+                                    .style.setProperty(
+                                        "--wBack",
+                                        "linear-gradient(to bottom, skyblue ," +
+                                            weatherBackground
+                                    );
+                                document
+                                    .querySelector(":root")
+                                    .style.setProperty("--txtColor", "black");
+                            }
+                        }
+                        var curtemp = Math.round(apiResponse.main.temp);
+                        var curtempC = Math.round((curtemp - 32) * (5 / 9));
+                        var wimg =
+                            "./images/pack" +
+                            `${iconPack}` +
+                            "/" +
+                            apiResponse.weather[0].icon +
+                            ".png";
+                        $.ajax({
+                            url: "http://api.openweathermap.org/geo/1.0/direct",
+                            data: { q: `${yourCity}`, appid: `${yourApiKey}` },
+                            dataType: "json",
+                            success: function (geoResponse) {
+                                if (
+                                    geoResponse[0].country.toLowerCase() != "us"
+                                ) {
+                                    if (
+                                        geoResponse[0].state ==
+                                            apiResponse.name ||
+                                        geoResponse[0].state == null
+                                    ) {
+                                        geoResponse[0].state =
+                                            regionTranslate.of(
+                                                geoResponse[0].country
+                                            );
+                                    }
+                                }
+
+                                if (weatherIcons == 1) {
+                                    document.getElementById(
+                                        "id-temp"
+                                    ).innerHTML = `${curtemp}&deg;F | ${curtempC}&deg;C`;
+                                    document.getElementById(
+                                        "id-weather"
+                                    ).innerHTML = `<div>${apiResponse.weather[0].description}</div><img class='weather-icon' src=${wimg}>`;
+                                } else {
+                                    document.getElementById(
+                                        "id-weather"
+                                    ).innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description}`;
+                                }
+                                return;
+                            },
+                        });
+                    },
+                });
+            }
+            function currentTime(date) {
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var isAmPm = hours >= 12 ? "PM" : "AM";
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                var curTime = hours + ":" + minutes + " " + isAmPm;
+                return curTime;
+            }
+            function time24(date) {
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                var curTime24 = hours + ":" + minutes;
+                return curTime24;
+            }
+            function refreshData() {
+                weatherCheck();
+                setTimeout(refreshData, 60000);
+            }
+        </script>
+    </body>
+</html>
