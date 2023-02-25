@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="style.css"
+        />
+        <style>
+            .taskContainer {
+                display: grid;
+                row-gap: 12px;
+                grid-template-rows: 1fr repeat(3, min-content) 1fr;
+            }
+
+            .futura-pt-bold,
+            .taskContainerName {
+                font-family: futura-pt-bold;
+                font-weight: 700;
+            }
+
+            .taskContainerName {
+                font-size: 54px;
+            }
+
+            dl {
+                margin-block: 0px;
+            }
+
+            dd {
+                display: list-item;
+                list-style-type: "☐";
+                padding-inline-start: 1ch;
+            }
+
+            .complete {
+                text-decoration: line-through;
+                list-style-type: "☑";
+            }
+        </style>
+    </head>
+    <body>
+        <div class="taskContainer">
+            <div></div>
+            <div class="taskContainerName">to do:</div>
+            <hr />
+            <div>
+                <dl id="taskContainerList"></dl>
+            </div>
+            <div></div>
+        </div>
+    </body>
+    <script>
+        const apiToken = "7ba21bc84a2535ce6f19752f69a05e552dc9300b";
+        const tasksUrl = "https://api.todoist.com/rest/v2/tasks";
+        const taskList = document.getElementById("taskContainerList");
+
+        const requestHeaders = new Headers({
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + apiToken,
+        });
+
+        async function getTasks() {
+            var existingTaskElements = document.getElementsByTagName("dd");
+            var existingTasks = Array.from(
+                Array(existingTaskElements.length).keys()
+            ).map((value) => existingTaskElements.item(value));
+            const filteredTasks = await fetch(tasksUrl, {
+                method: "GET",
+                headers: requestHeaders,
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((value) => {
+                    var streamTasks = value.filter((object) => {
+                        return object.labels.includes("showOnStream");
+                    });
+                    existingTasks
+                        .filter(
+                            (z) => !streamTasks.map((x) => x.id).includes(z.id)
+                        )
+                        .forEach((element) => {
+                            console.log(element);
+                            element.className = "complete";
+                        });
+                    streamTasks.forEach((task) => {
+                        if (
+                            !existingTasks
+                                .map((value) => value.id)
+                                .includes(task.id)
+                        ) {
+                            var taskHtml =
+                                '<dd id="' +
+                                task.id +
+                                '"><span class="futura-pt-bold">' +
+                                task.content.toLowerCase() +
+                                "</span> " +
+                                task.description.toLowerCase() +
+                                "</dd>";
+                            taskList.innerHTML += taskHtml;
+                        }
+                    });
+                });
+        }
+
+        window.addEventListener("load", (event) => {
+            getTasks();
+        });
+        setInterval(async () => {
+            await getTasks();
+        }, 10000);
+    </script>
+</html>
