@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
         <link
             rel="stylesheet"
             href="../css/style.css"
@@ -14,7 +15,7 @@
 
             .futura-pt-bold,
             .taskContainerName {
-                font-family: futura-pt-bold;
+                font-family: futura-pt-bold, sans-serif;
                 font-weight: 700;
             }
 
@@ -28,13 +29,17 @@
 
             dd {
                 display: list-item;
-                list-style-type: "-";
-                padding-inline-start: 1ch;
+                list-style-type: "☐";
+                padding-inline-start: 12px;
+            }
+
+            .taskName {
+                margin-right: 12px;
             }
 
             .complete {
                 text-decoration: line-through;
-                list-style-type: "-";
+                list-style-type: "☑︎";
             }
         </style>
     </head>
@@ -73,14 +78,20 @@
                 })
                 .then((value) => {
                     var streamTasks = value.filter((object) => {
-                        return object.labels.includes("showOnStream");
+                        return (
+                            (object.due == null
+                                ? true
+                                : object.due.date.match(
+                                      moment().format("YYYY-MM-DD")
+                                  ) != null) &&
+                            object.labels.includes("showOnStream")
+                        );
                     });
                     existingTasks
                         .filter(
                             (z) => !streamTasks.map((x) => x.id).includes(z.id)
                         )
                         .forEach((element) => {
-                            console.log(element);
                             element.className = "complete";
                         });
                     streamTasks.forEach((task) => {
@@ -92,10 +103,9 @@
                             var taskHtml =
                                 '<dd id="' +
                                 task.id +
-                                '"><span class="futura-pt-bold">' +
+                                '"><span class="futura-pt-bold taskName">' +
                                 task.content.toLowerCase() +
-                                "</span> " +
-                                task.description.toLowerCase() +
+                                "</span>" + task.description.toLowerCase() +
                                 "</dd>";
                             taskList.innerHTML += taskHtml;
                         }
