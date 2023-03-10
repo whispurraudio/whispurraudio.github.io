@@ -4,13 +4,14 @@
         <script src="https://momentjs.com/downloads/moment.js"></script>
         <link
             rel="stylesheet"
-            href="../css/style.css"
+            href="../../css/style.css"
         />
         <style>
             .taskContainer {
                 display: grid;
                 row-gap: 12px;
-                grid-template-rows: 1fr repeat(3, min-content) 1fr;
+                grid-template-rows: repeat(3, min-content);
+                padding: 1em;
             }
 
             .futura-pt-bold,
@@ -20,38 +21,50 @@
             }
 
             .taskContainerName {
-                font-size: 54px;
+                font-size: 1.75em;
             }
 
-            dl {
-                margin-block: 0px;
+            #taskContainerList {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
             }
 
-            dd {
-                display: list-item;
-                list-style-type: "☐";
-                padding-inline-start: 12px;
+            .task {
+                display: grid;
+                column-gap: 0.5em;
+                grid-template-columns: min-content 1fr;
+                align-items: center;
+                font-size: 1.25em;
+            }
+
+            .taskBullet {
+                background-image: url(square-regular.svg);
+                height: 1em;
+                width: 1em;
+                background-repeat: no-repeat;
+                background-position: center;
+                filter: drop-shadow(var(--shadow-0125em));
             }
 
             .taskName {
-                margin-right: 12px;
+                margin-right: 0.25em;
             }
 
-            .complete {
+            .task.complete {
                 text-decoration: line-through;
-                list-style-type: "☑︎";
+            }
+
+            .complete .taskBullet {
+                background-image: url(square-check-regular.svg);
             }
         </style>
     </head>
     <body>
         <div class="taskContainer">
-            <div></div>
             <div class="taskContainerName">to do:</div>
             <hr />
-            <div>
-                <dl id="taskContainerList"></dl>
-            </div>
-            <div></div>
+            <div id="taskContainerList"></div>
         </div>
     </body>
     <script>
@@ -65,7 +78,7 @@
         });
 
         async function getTasks() {
-            var existingTaskElements = document.getElementsByTagName("dd");
+            var existingTaskElements = document.getElementsByClassName("task");
             var existingTasks = Array.from(
                 Array(existingTaskElements.length).keys()
             ).map((value) => existingTaskElements.item(value));
@@ -92,7 +105,7 @@
                             (z) => !streamTasks.map((x) => x.id).includes(z.id)
                         )
                         .forEach((element) => {
-                            element.className = "complete";
+                            element.className += " complete";
                         });
                     streamTasks.forEach((task) => {
                         if (
@@ -101,12 +114,13 @@
                                 .includes(task.id)
                         ) {
                             var taskHtml =
-                                '<dd id="' +
+                                '<div id="' +
                                 task.id +
-                                '"><span class="futura-pt-bold taskName">' +
+                                '" class="task"><div class="taskBullet"></div><div><span class="futura-pt-bold taskName">' +
                                 task.content.toLowerCase() +
-                                "</span>" + task.description.toLowerCase() +
-                                "</dd>";
+                                "</span>" +
+                                task.description.toLowerCase() +
+                                "</div></div>";
                             taskList.innerHTML += taskHtml;
                         }
                     });
